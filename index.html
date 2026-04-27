@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Meta Ads Community</title>
+    <meta name="description" content="Join the elite Meta Ads, Google Ads, and Digital Marketing community today.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Dynamic background elements -->
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <main class="container">
+        <div class="form-wrapper">
+            <div class="header">
+                <img src="logo.jpeg" alt="Kerala Meta Ads Community Logo" class="form-logo">
+                <h1>Join the <span class="highlight">Kerala Meta Ads</span> Community</h1>
+                <p>Elevate your digital marketing skills. Network, learn, and grow with top-tier professionals.</p>
+            </div>
+
+            <form id="joinForm" class="community-form">
+                <!-- Name -->
+                <div class="input-group">
+                    <input type="text" id="name" name="name" required placeholder=" ">
+                    <label for="name">Full Name</label>
+                </div>
+
+                <!-- WhatsApp -->
+                <div class="input-group phone-group">
+                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder=" ">
+                    <span class="prefix">+91</span>
+                    <label for="whatsapp">WhatsApp Number</label>
+                </div>
+
+                <!-- Place -->
+                <div class="input-group">
+                    <input type="text" id="place" name="place" required placeholder=" ">
+                    <label for="place">City / Country</label>
+                </div>
+
+                <!-- Status (Segmented Control) -->
+                <div class="form-section">
+                    <span class="section-label">Current Status</span>
+                    <div class="segmented-control">
+                        <input type="radio" id="status-student" name="status" value="Student" checked>
+                        <label for="status-student">Student</label>
+
+                        <input type="radio" id="status-working" name="status" value="Working">
+                        <label for="status-working">Working Pro</label>
+
+                        <div class="selection-indicator"></div>
+                    </div>
+                </div>
+
+                <!-- Conditional Fields -->
+                <div class="input-group" id="field-study-topic" style="display: none;">
+                    <input type="text" id="studyType" name="study_type" placeholder=" ">
+                    <label for="studyType">What are you studying?</label>
+                </div>
+
+                <div class="input-group" id="field-job-title" style="display: none;">
+                    <input type="text" id="jobTitle" name="job_title" placeholder=" ">
+                    <label for="jobTitle">Job Title</label>
+                </div>
+
+                <!-- Common Field -->
+                <div class="input-group custom-dropdown" id="interestDropdown">
+                    <input type="hidden" name="primary_interest" id="primaryInterestValue">
+                    <div class="dropdown-header">
+                        <span class="selected-value"></span>
+                        <label>Field / Interest</label>
+                        <div class="select-arrow">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </div>
+                    </div>
+                    <ul class="dropdown-list">
+                        <li data-value="Digital Marketing">Digital Marketing</li>
+                        <li data-value="Graphic Designing">Graphic Designing</li>
+                        <li data-value="Web Development">Web Development</li>
+                        <li data-value="Content Creation">Content Creation</li>
+                        <li data-value="Others">Others</li>
+                    </ul>
+                </div>
+
+                <!-- Knowledge (Multi-select pills) -->
+                <div class="form-section" id="expertise-section" style="display: none;">
+                    <span class="section-label">Areas of Expertise <small>(Select multiple)</small></span>
+                    <div class="checkbox-group">
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="knowledge" value="Meta Ads">
+                            <span class="pill">Meta Ads</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="knowledge" value="Google Ads">
+                            <span class="pill">Google Ads</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="knowledge" value="Graphic Design">
+                            <span class="pill">Graphic Design</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="knowledge" value="Web Development">
+                            <span class="pill">Web Dev</span>
+                        </label>
+                        <label class="custom-checkbox">
+                            <input type="checkbox" name="knowledge" value="SEO">
+                            <span class="pill">SEO</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn" id="submitBtn">
+                    <span class="btn-text">Join Community</span>
+                    <span class="btn-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </span>
+                </button>
+            </form>
+
+            <!-- Success Overlay -->
+            <div class="success-message" id="successMessage">
+                <div class="success-icon">
+                    <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                    </svg>
+                </div>
+                <h2>Application Sent!</h2>
+                <p>Welcome to the circle. <br>We'll notify you on WhatsApp soon.</p>
+                <button type="button" class="reset-btn" onclick="location.reload()">Join Another</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

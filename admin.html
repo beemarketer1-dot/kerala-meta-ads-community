@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meta Ads | Admin Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> <!-- Reusing powerful base styles -->
+    <link rel="stylesheet" href="admin.css"> <!-- Dashboard Specific additions -->
+</head>
+<body>
+    <!-- Thematic Animated Backgrounds -->
+    <div class="background-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <!-- Login Wall Layout -->
+    <div id="loginGate" class="login-container">
+        <div class="form-wrapper login-box">
+            <div class="header">
+                <h2>Admin <span class="highlight">Portal</span></h2>
+                <p>Secure connection required</p>
+            </div>
+            
+            <form id="adminLoginForm" class="community-form">
+                <div class="input-group">
+                    <input type="text" id="adminUsername" placeholder=" " required autocomplete="off">
+                    <label>Username</label>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="adminPassword" placeholder=" " required>
+                    <label>Password</label>
+                </div>
+                <div id="loginError" class="error-msg" style="display: none;">Invalid credentials</div>
+                <button type="submit" class="submit-btn" id="loginBtn">Authorize Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Core App Dashboard -->
+    <div id="dashboard" class="dashboard-container" style="display: none;">
+        
+        <div class="dash-header">
+            <h2>Dashboard <span class="highlight">Overview</span></h2>
+            <div class="dash-actions">
+                <button id="refreshBtn" class="action-btn">↺ Refresh Lead Sync</button>
+                <button id="logoutBtn" class="action-btn outline">Logout</button>
+            </div>
+        </div>
+
+        <!-- Metrics Grid -->
+        <div class="stats-grid">
+            <div class="stat-card total-card">
+                <h3>Total Submits</h3>
+                <div class="stat-value" id="stat-total">0</div>
+            </div>
+            <div class="stat-card card-dm">
+                <h3>Digital Marketing</h3>
+                <div class="stat-value" id="stat-dm">0</div>
+            </div>
+            <div class="stat-card card-gd">
+                <h3>Graphic Designing</h3>
+                <div class="stat-value" id="stat-gd">0</div>
+            </div>
+            <div class="stat-card card-wd">
+                <h3>Web Development</h3>
+                <div class="stat-value" id="stat-wd">0</div>
+            </div>
+            <div class="stat-card card-cc">
+                <h3>Content Creation</h3>
+                <div class="stat-value" id="stat-cc">0</div>
+            </div>
+            <div class="stat-card card-others">
+                <h3>Others</h3>
+                <div class="stat-value" id="stat-others">0</div>
+            </div>
+            <div class="stat-card card-students">
+                <h3>Total Students</h3>
+                <div class="stat-value" id="stat-students">0</div>
+            </div>
+            <div class="stat-card card-workers">
+                <h3>Working Pros</h3>
+                <div class="stat-value" id="stat-workers">0</div>
+            </div>
+        </div>
+
+        <!-- System Table Control View -->
+        <div class="data-section form-wrapper">
+            <div class="data-toolbar">
+                <div class="filter-group" style="display: flex; gap: 1rem; align-items: center; max-width: 100%; flex-wrap: wrap;">
+                    <div class="search-box input-group" style="min-width: 260px; width:auto; margin:0;">
+                        <input type="text" id="searchInput" placeholder=" " style="padding: 1.2rem 1.2rem 0.6rem;">
+                        <label style="left: 1.2rem;">Live Search Filter...</label>
+                    </div>
+                    
+                    <select id="categoryFilter" class="glass-select">
+                        <option value="All">All Interests</option>
+                        <option value="Digital Marketing">Digital Marketing</option>
+                        <option value="Graphic Designing">Graphic Designing</option>
+                        <option value="Web Development">Web Development</option>
+                        <option value="Content Creation">Content Creation</option>
+                        <option value="Others">Others</option>
+                    </select>
+                </div>
+                
+                <div class="data-controls" style="display: flex; gap: 0.8rem; align-items: center; flex-wrap: wrap;">
+                    <input type="text" id="vcfPrefix" placeholder="VCF Prefix (e.g. Meta_)" class="glass-select" style="min-width: 180px; margin-right: 0.5rem;">
+                    <button id="downloadVcfBtn" class="action-btn primary-action">↓ Export VCF Data Stream</button>
+                    <button id="clearDataBtn" class="action-btn danger">⚠️ Wipe All Subscriptions</button>
+                </div>
+            </div>
+
+            <div class="table-responsive">
+                <table id="dataTable" class="glass-table">
+                    <thead>
+                        <tr>
+                            <th>Date Pulled</th>
+                            <th>Applicant</th>
+                            <th>Contact Endpoint</th>
+                            <th>Origin</th>
+                            <th>Profile Grouping</th>
+                            <th>Declared Interest</th>
+                            <th>Capabilities</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr><td colspan="8" class="loading-cell">Securely establishing proxy...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Active Logic Router -->
+    <script src="admin.js"></script>
+</body>
+</html>
